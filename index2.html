@@ -11,6 +11,41 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script src="c_jquery.js"></script>
+  <script>
+    function bra(){
+      console.log("bra button clicked");
+    }
+
+    function bra2(){
+      console.log("bra22221111 ");
+    }
+
+    $(function () {
+
+      var somefunc = function () { console.log("somefunc()"); };      
+
+      $('#b1').click(bra2); // $('#b1').on('click', bra2);
+
+      $('#p1').on('click', somefunc);
+
+      $('#b1').click(function (e) { 
+        e.preventDefault();
+        console.log("jquery clicked");
+        var checkVal = $('#meat').val();
+        console.log("Value: "+checkVal);
+        $('#p1').hide();
+      });
+
+      $('#meat').prop('checked',true);
+      $('#dairy').prop('checked', true);
+    });
+    
+  </script>
+
 </head>
 
 <body>
@@ -18,7 +53,10 @@
     <!-- place navbar here -->
   </header>
   <main>
-    conta
+    <p id="p1">
+      some text
+    </p>
+    <button type="button" class="btn btn-outline-primary" id="b1" onclick="bra()">Primary</button>
     <div class="mb-3">
       <label for="" class="form-label">City</label>
       <select class="form-select form-select-lg" name="" id="">
@@ -257,10 +295,10 @@
           </div> 
           <div class="col-sm-6">
             <div class="checkbox">
-                <label><input name="food" type="checkbox" value="dairy">Dairy</label>
+                <label><input name="food" type="checkbox" id="dairy" value="dairy">Dairy</label>
             </div>
             <div class="checkbox">
-                <label><input name="food" type="checkbox" value="meat">Meat</label>
+                <label><input name="food" type="checkbox" id="meat" value="meat">Meat</label>
             </div>
             <div class="checkbox">
                 <label><input name="food" type="checkbox" value="fish">Fish</label>
