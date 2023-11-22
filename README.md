@@ -1,1 +1,1 @@
-pro go
+pro go2
