@@ -1,0 +1,13 @@
+p {background-color: green;}
+
+.stuff {
+    background-color: red;
+}
+
+.yellow-text {
+    color: yellow;
+}
+
+.big-size {
+    font-size: 2rem;
+}

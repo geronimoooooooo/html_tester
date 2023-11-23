@@ -8,6 +8,8 @@ function bra(){
 
   $(function () {
 
+    $(this).css("background-color", "blue");
+
     var somefunc = function () { console.log("somefunc()"); };      
 
     $('#b1').click(bra2); // $('#b1').on('click', bra2);
@@ -16,13 +18,12 @@ function bra(){
 
     $('#b1').click(function (e) { 
       e.preventDefault();
+      $(this).css("background-color", "blue");
       console.log("jquery clicked");
       var checkVal = $('#meat').val();
       console.log("Value: " + checkVal);
       $('#p1').hide();
     });
-
-    
 
     $('#meat').prop('checked',true);
     $('#dairy').prop('checked', true);
